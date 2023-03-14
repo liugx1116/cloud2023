@@ -2,19 +2,18 @@ package com.atgx.springcloud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 /**
- * @author liugx
- * @Description TODO
- * @date 2023/3/5 15:29
- **/
+ * @Author: liugx
+ * @CreateTime: 2023-03-09  08:40
+ * @Description: TODO
+ * @Version: 1.0
+ */
 @SpringBootApplication
 @EnableEurekaClient
-@EnableDiscoveryClient
-public class PaymentMain8001 {
+public class PaymentMain8002 {
     public static void main(String[] args) {
-        SpringApplication.run(PaymentMain8001.class,args);
+        SpringApplication.run(PaymentMain8002.class,args);
     }
 }
