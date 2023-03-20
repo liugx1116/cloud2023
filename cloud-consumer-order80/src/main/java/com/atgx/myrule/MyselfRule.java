@@ -3,6 +3,7 @@ package com.atgx.myrule;
 import com.netflix.loadbalancer.IRule;
 import com.netflix.loadbalancer.RandomRule;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
 /**
  * @Author: liugx
@@ -10,6 +11,7 @@ import org.springframework.context.annotation.Bean;
  * @Description: 替换默认轮询算法
  * @Version: 1.0
  */
+@Configuration
 public class MyselfRule {
     @Bean
     public IRule myrule(){

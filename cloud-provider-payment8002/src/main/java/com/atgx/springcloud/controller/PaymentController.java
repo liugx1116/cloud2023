@@ -17,7 +17,7 @@ import javax.annotation.Resource;
 @Slf4j
 @RestController
 public class PaymentController {
-    @Value("server.port")
+    @Value("${server.port}")
     private String serverPort;
     @Resource
     private PaymentService paymentService;
@@ -42,9 +42,13 @@ public class PaymentController {
 
         if(payment != null)
         {
-            return new CommonResult(200,"查询成功"+"\t 服务端口："+serverPort,payment);
+            return new CommonResult(200,"查询成功12,serverPort:  "+serverPort,payment);
         }else{
             return new CommonResult(444,"没有对应记录,查询ID: "+id,null);
         }
+    }
+    @GetMapping(value = "/payment/lb")
+    public String getPaymentLB(){
+        return serverPort;
     }
 }
