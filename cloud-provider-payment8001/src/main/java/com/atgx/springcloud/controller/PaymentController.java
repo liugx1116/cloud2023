@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 import javax.websocket.server.PathParam;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author liugx
@@ -73,6 +74,18 @@ public class PaymentController {
 
     @GetMapping(value = "/payment/lb")
     public String getPaymentLB(){
+        return serverPort;
+    }
+
+    @GetMapping(value = "/payment/feign/timeout")
+    public String paymentFeignTimeOut(){
+        System.out.println("*******paymenttimeout start port*****************"+serverPort);
+        try {
+            // 模拟 暂停几秒钟线程
+            TimeUnit.SECONDS.sleep(3);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         return serverPort;
     }
 }
