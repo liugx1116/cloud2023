@@ -11,7 +11,7 @@ import org.springframework.cloud.config.server.EnableConfigServer;
  * @Version: 1.0
  */
 @SpringBootApplication
-@EnableConfigServer
+@EnableConfigServer // 开启应用服务对配置中心的支持
 public class ConfigCenterMain3344 {
     public static void main(String[] args) {
         SpringApplication.run(ConfigCenterMain3344.class,args);
