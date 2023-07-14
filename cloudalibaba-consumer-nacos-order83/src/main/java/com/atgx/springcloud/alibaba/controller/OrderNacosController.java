@@ -20,11 +20,11 @@ public class OrderNacosController {
     @Resource
     private RestTemplate restTemplate;
 
-    @Value("${serice-url.nacos-user-service}")
+    @Value("${service-url.nacos-user-service}")
     private String serverUrl;
 
-    @GetMapping("/consumer/payment/nacos/id")
-    public String paymentInfo(@PathVariable("id") Long id){
-        return restTemplate.getForObject(serverUrl+"/patment/nacos"+id,String.class);
+    @GetMapping("/consumer/payment/nacos/{id}")
+    public String paymentInfo(@PathVariable("id") Integer id){
+        return restTemplate.getForObject(serverUrl+"/payment/nacos/"+id,String.class);
     }
 }
